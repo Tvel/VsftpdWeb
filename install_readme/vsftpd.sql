@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.7deb6
+-- version 3.4.11.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 19, 2012 at 12:35 AM
--- Server version: 5.1.49
--- PHP Version: 5.3.3-7+squeeze3
+-- Generation Time: Jun 13, 2013 at 07:05 PM
+-- Server version: 5.5.31
+-- PHP Version: 5.4.6-1ubuntu1.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,11 +34,8 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `perm` varchar(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
---
--- Dumping data for table `accounts`
---
 
 
 -- --------------------------------------------------------
@@ -52,17 +50,21 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `value` text NOT NULL,
   `defval` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `name`, `value`, `defval`) VALUES
-(1, 'adminlogin', 'admin', 'admin'),
-(2, 'adminpass', '*196BDEDE2AE4F84CA44C47D54D78478C7E2BD7B7', 'pass'),
-(3, 'site_url', 'http://home.velkoff.net/ftp/', ''),
-(4, 'user_path', '/home/vsftpd/FTP/', ''),
-(5, 'diskspace', '/', 'Root'),
-(6, 'disk1', '/home/vsftpd/FTP1/', 'Disk1 -FTP1'),
-(7, 'disk2', '/home/vsftpd/FTP2/', 'Disk2 -FTP2');
+(1, 'admin', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441', 'admin'),
+(8, 'log_path', '/home/vsftpd/xferlog.log', 'log_path'),
+(3, 'site_url', 'http://localhost/', ''),
+(4, 'user_path', '/home/vsftpd/FTP', ''),
+(5, 'disk1', '/home/vsftpd/FTP', 'disk1'),
+(6, 'disk2', '/media/disk2', 'disk2'),
+(7, 'disk3', '/media/disk3', 'disk3');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
