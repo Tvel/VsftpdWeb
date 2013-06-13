@@ -41,7 +41,7 @@
 </form>
 <h1>Change FTP User Password</h1>
 <?=form_open('users/changepass');?>
-	<input type="hidden" name="pass" value=0> 
+	<input type="hidden" name="id" value="<?=$user_item['id']?>"> 
 		<table align="center">
 			<tr>
 				<th colspan=2>New Password</th>

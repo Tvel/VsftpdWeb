@@ -30,14 +30,25 @@ class Users_model extends CI_Model {
 	}
 	
 	public function new_user()
-{
-	
+{				
+				$username = $this->input->post('user');
+
+				$query = $this->db->get_where('settings', array('name' => 'user_path'));
+				$query = $query->row_array(0);
+				$ppath = $query['value'];
+				$ppath = $ppath.$username;
+				if(!file_exists($ppath)){
+					if (!mkdir($ppath, 0777)) die("Failed to mkdir $ppath, did the dir existed? ");
+					if (!chmod($ppath, 0777)) die('Failed to chmod');
+					}
 	
 	$data = array(
 		'username' => $this->input->post('user'),
 		'password' => $this->input->post('upass'),
 		'perm' => 'r'
 	);
+	
+				
 	
 	return $this->db->insert('accounts', $data);
 }

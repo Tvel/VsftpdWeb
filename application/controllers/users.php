@@ -52,7 +52,7 @@ class Users extends CI_Controller {
 	{
 		$this->users_model->new_user();
 
-		redirect('users/') ;
+		header( "Location: /index.php/users/" );
 	}
 		
 	}
@@ -139,9 +139,18 @@ class Users extends CI_Controller {
 	public function change()
 	{
 	
-	$this->load->helper('form');
+	
 	
 	$this->users_model->change();
+	header( "Location: /index.php/users/" );
+	
+	}
+	
+	
+		public function changepass()
+	{
+
+	$this->users_model->changepass();
 	header( "Location: /index.php/users/" );
 	
 	}
