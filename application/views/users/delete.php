@@ -1,0 +1,1 @@
+<? header('Location: /index.php/users/') ; ?>
