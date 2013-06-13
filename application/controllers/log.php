@@ -5,6 +5,7 @@ class Log extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('disk_model');
+		$this->load->model('log_model');
 		$this->check_isvalidated();
 		$this->disk_space();
 	}
@@ -26,6 +27,7 @@ class Log extends CI_Controller {
 		$data['disk2']  = $this->disk_model->get_space('disk2');
 		$data['disk3']  = $this->disk_model->get_space('disk3');
 		
+		$data['log_path'] = $this->log_model->get_settings(8);
 		
 		$data['title'] = 'FTP LOG';
 		

@@ -10,10 +10,10 @@ class Disk_model extends CI_Model {
 	
 	public function get_space($disk) {
 	
-	$query = $this->db->get_where('settings', array('name' => $disk));
+	$query = $this->db->get_where('settings', array('name' => $disk) );
 
 	$query = $query->row_array(0);
-	$query1['disk'] = $disk;
+	$query1['disk'] = $query['defval'];
 	
 	$bytes = disk_free_space($query['value']); 
     $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );

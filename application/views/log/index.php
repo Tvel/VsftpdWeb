@@ -4,8 +4,8 @@
 <table class="log">
 <tr><th>Info</th><th>Size</th><th>State</th><th>User</th><th>File Name</th></tr>
 <?
-		// $myfile should be lof file path( TODO: database setting)
-		$myfile = '/home/doli/xferlog.log';
+		// $myfile should be log file path
+		$myfile = $log_path;
 		exec("tac $myfile /var/www/ftp/temp.txt");
 		$ic = 0;
 		$ic_max = 200;  // stops after this number of rows
