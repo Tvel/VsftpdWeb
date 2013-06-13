@@ -1,5 +1,11 @@
 VsftpdWeb
 =========
+VsftpdWeb is a simple web interface for vsftpd ftp server.
+Vsftpd needs to be configured to virtual users with mysql pam authentications.
+The web interface also needs change to sudoers file and shell access.
+It is inteneded for internal network use.
+
+=========
 ---Linux Changes: 
 --Sudoers file changes: 
 
