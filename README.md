@@ -21,9 +21,8 @@ In the bottom there are the lines you must edit to match your configuration.
 
 user_config_dir=/etc/vsftpd/vusers --- I reccomend this to be lest as it is. 
   The config part of the web interface is not made to be reconfigured.
-  It is an easy change, just edit application\views\log\index.php line8: $myfile varriable
   
-xferlog_file=/home/vsftpd/xferlog.log --- same for now
+xferlog_file=/home/vsftpd/xferlog.log --- or something else, you just need to configure it later in the web interface also
 
 
 
@@ -31,4 +30,4 @@ xferlog_file=/home/vsftpd/xferlog.log --- same for now
 Upload the database
 
 Edit - application\config\database.php
-
+ configure log file path and ftp paths in Settings
