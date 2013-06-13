@@ -67,7 +67,7 @@ class Settings extends CI_Controller {
 	
 	
 	
-	$this->form_validation->set_rules('adminpass', 'Password', 'matches[repass]');
+	$this->form_validation->set_rules('adminpass', 'Password', 'matches[repass]|min_length[4]');
 	
 		
 	if ($this->form_validation->run() == false)
