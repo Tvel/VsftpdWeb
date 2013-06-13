@@ -16,11 +16,15 @@ In the bottom there are the lines you must edit to match your configuration.
 
 guest_username=vsftpd
 local_root=/home/vsftpd/FTP/$USER 
-user_config_dir=/etc/vsftpd/vusers --- I reccomend this to be lest as it is. The config part of the web interface is not made to be reconfigured.
+user_config_dir=/etc/vsftpd/vusers --- I reccomend this to be lest as it is. 
+  The config part of the web interface is not made to be reconfigured.
+  It is an easy change, just edit application\views\log\index.php line8: $myfile varriable
 xferlog_file=/home/vsftpd/xferlog.log --- same for now
 
 
 
 ---configure MYSQL
-Upload the databsde
+Upload the database
+
+Edit - application\config\database.php
 
