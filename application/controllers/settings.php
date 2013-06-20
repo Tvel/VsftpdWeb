@@ -33,16 +33,22 @@ class Settings extends CI_Controller {
 		$data['title'] = 'FTP Settings';
 		
 		
-	$data['site_url'] = $this->settings_model->get_settings(3);
-	$data['def_path'] = $this->settings_model->get_settings(4);
-	$data['getdisk1'] = $this->settings_model->get_settings(5);
-	$data['getdisk2'] = $this->settings_model->get_settings(6);
-	$data['getdisk3'] = $this->settings_model->get_settings(7);
-	$data['log_path'] = $this->settings_model->get_settings(8);
-	$data['def_path_def'] = $this->settings_model->get_settings_def(4);
-	$data['getdisk1_def'] = $this->settings_model->get_settings_def(5);
-	$data['getdisk2_def'] = $this->settings_model->get_settings_def(6);
-	$data['getdisk3_def'] = $this->settings_model->get_settings_def(7);
+	$data['site_url'] = $this->settings_model->get_settings('site_url');
+	$data['def_path'] = $this->settings_model->get_settings('user_path');
+	$data['getdisk1'] = $this->settings_model->get_settings('disk1');
+	$data['getdisk2'] = $this->settings_model->get_settings('disk2');
+	$data['getdisk3'] = $this->settings_model->get_settings('disk3');
+	$data['log_path'] = $this->settings_model->get_settings('log_path');
+	$data['def_path_def'] = $this->settings_model->get_settings_def('user_path');
+	$data['getdisk1_def'] = $this->settings_model->get_settings_def('disk1');
+	$data['getdisk2_def'] = $this->settings_model->get_settings_def('disk2');
+	$data['getdisk3_def'] = $this->settings_model->get_settings_def('disk3');
+		
+	$data['mail_server'] = $this->settings_model->get_settings('mail_server');
+	$data['mail_port'] = $this->settings_model->get_settings('mail_port');
+	$data['mail_user'] = $this->settings_model->get_settings('mail_user');
+	$data['mail_password'] = $this->settings_model->get_settings('mail_password');
+	$data['mail_from'] = $this->settings_model->get_settings('mail_from');	
 		
 
 	

@@ -37,6 +37,36 @@
 				<td width=50><input type='text' name="disk3n" size=30 value="<?=$getdisk3_def?>"></td>
         	</tr>
 			
+			<tr>
+        		<td colspan=3 align=center><input type="submit" name="submit" value="Save Settings"></td>
+         	</tr>
+			<tr>
+        		<th colspan=3>Mail Settings</th>
+        	</tr>
+			
+			<tr>
+        		<td width=150>Mail Server:</td>
+				<td width=300><input type='text' name="mail_server" size=30 value="<?=$mail_server?>"></td>
+        	</tr>
+			<tr>
+        		<td width=150>Mail Server port:</td>
+				<td width=300><input type='text' name="mail_port" size=30 value="<?=$mail_port?>"></td>
+        	</tr>
+			<tr>
+        		<td width=150>Mail User:</td>
+				<td width=300><input type='text' name="mail_user" size=30 value="<?=$mail_user?>"></td>
+        	</tr>
+			<tr>
+        		<td width=150>Mail User password:</td>
+				<td width=300><input type="password" name="mail_password" size=30 value="<?=$mail_password?>"></td>
+        	</tr>
+			<tr>
+        		<td width=150>Mail From:</td>
+				<td width=300><input type='text' name="mail_from" size=30 value="<?=$mail_from?>"></td>
+        	</tr>
+			
+			
+			
 			
 			<tr>
         		<td colspan=3 align=center><input type="submit" name="submit" value="Save Settings"></td>

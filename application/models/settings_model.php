@@ -9,18 +9,18 @@ class Settings_model extends CI_Model {
 	}
 	
 
-	public function get_settings($id) {
+	public function get_settings($name) {
 	
-	$query = $this->db->get_where('settings', array('id' => $id));
+	$query = $this->db->get_where('settings', array('name' => $name));
 
 	$query = $query->row_array(0);
 	$query1 = $query['value'];
 	return $query1;
 	}
 	
-	public function get_settings_def($id) {
+	public function get_settings_def($name) {
 	
-	$query = $this->db->get_where('settings', array('id' => $id));
+	$query = $this->db->get_where('settings', array('name' => $name));
 
 	$query = $query->row_array(0);
 	$query1 = $query['defval'];
@@ -65,8 +65,22 @@ class Settings_model extends CI_Model {
 			$q="UPDATE settings SET defval = '$temp' WHERE name = 'disk3' ;";
 			$this->db->query($q);
 			
-			
-			
+			//mail
+			$temp = $this->input->post('mail_server');
+			$q="UPDATE settings SET value = '$temp' WHERE name = 'mail_server'; " ;
+			$this->db->query($q);
+			$temp = $this->input->post('mail_port');
+			$q="UPDATE settings SET value = '$temp' WHERE name = 'mail_port'; " ;
+			$this->db->query($q);
+			$temp = $this->input->post('mail_user');
+			$q="UPDATE settings SET value = '$temp' WHERE name = 'mail_user'; " ;
+			$this->db->query($q);
+			$temp = $this->input->post('mail_password');
+			$q="UPDATE settings SET value = '$temp' WHERE name = 'mail_password'; " ;
+			$this->db->query($q);
+			$temp = $this->input->post('mail_from');
+			$q="UPDATE settings SET value = '$temp' WHERE name = 'mail_from'; " ;
+			$this->db->query($q);
 
 	}
 	

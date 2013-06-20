@@ -45,6 +45,7 @@ $route['users/change'] = 'users/change';
 $route['users/changepass'] = 'users/changepass';
 $route['users/(:any)'] = 'users/edit/$1';
 $route['log'] = 'log';
+$route['email'] = 'email';
 $route['monitor'] = 'monitor';
 $route['users'] = 'users';
 $route['login'] = 'login';

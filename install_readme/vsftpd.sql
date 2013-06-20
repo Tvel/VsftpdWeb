@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 13, 2013 at 07:05 PM
+-- Generation Time: Jun 20, 2013 at 03:45 PM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.6-1ubuntu1.2
 
@@ -34,7 +34,25 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `perm` varchar(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mail`
+--
+
+CREATE TABLE IF NOT EXISTS `mail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `users_id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `mail`
+--
 
 
 
@@ -50,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `value` text NOT NULL,
   `defval` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `settings`
@@ -59,11 +77,16 @@ CREATE TABLE IF NOT EXISTS `settings` (
 INSERT INTO `settings` (`id`, `name`, `value`, `defval`) VALUES
 (1, 'admin', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441', 'admin'),
 (8, 'log_path', '/home/vsftpd/xferlog.log', 'log_path'),
-(3, 'site_url', 'http://localhost/', ''),
-(4, 'user_path', '/home/vsftpd/FTP', ''),
-(5, 'disk1', '/home/vsftpd/FTP', 'disk1'),
-(6, 'disk2', '/media/disk2', 'disk2'),
-(7, 'disk3', '/media/disk3', 'disk3');
+(3, 'site_url', '', ''),
+(4, 'user_path', '/media/doli/BIG1/', ''),
+(5, 'disk1', '/media/doli/BIG1/', 'BIG1'),
+(6, 'disk2', '/media/doli/BIG2/', 'BIG2'),
+(7, 'disk3', '/', 'root'),
+(9, 'mail_server', 'mail.mail.com', ''),
+(10, 'mail_port', '25', '25'),
+(11, 'mail_user', 'ftp@mail.com', ''),
+(12, 'mail_password', 'ftppass', ''),
+(13, 'mail_from', 'FTP Report', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

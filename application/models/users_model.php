@@ -41,16 +41,17 @@ class Users_model extends CI_Model {
 					if (!mkdir($ppath, 0777)) die("Failed to mkdir $ppath, did the dir existed? ");
 					if (!chmod($ppath, 0777)) die('Failed to chmod');
 					}
-	
+	/*
 	$data = array(
 		'username' => $this->input->post('user'),
 		'password' => $this->input->post('upass'),
 		'perm' => 'r'
 	);
 	
-				
-	
-	return $this->db->insert('accounts', $data);
+	*/	 
+		
+	$q="INSERT INTO accounts (username, password, perm) VALUES ( '".$this->input->post('user')."', PASSWORD('".$this->input->post('upass')."'), 'r' )  ;";
+	return $this->db->query($q);
 }
 
 	public function delete_user($id)
@@ -133,7 +134,7 @@ class Users_model extends CI_Model {
 	
 	$id = $this->input->post('id');
 	$pass = $this->input->post('upass');
-	$q="UPDATE accounts SET password = '$pass' WHERE id = '$id';";
+	$q="UPDATE accounts SET password = PASSWORD('$pass') WHERE id = '$id';";
 	$this->db->query($q);
 	}
 
