@@ -31,3 +31,7 @@ Upload the database
 
 Edit - application\config\database.php
  configure log file path and ftp paths in Settings
+
+ --- Mail
+needs cron job for http://localhost/index.php/email
+send mail for mails and users in "mail" table for yesterday atm.
