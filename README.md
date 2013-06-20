@@ -5,6 +5,8 @@ Vsftpd needs to be configured to virtual users with mysql pam authentications.
 The web interface also needs change to sudoers file and shell access.
 It is inteneded for internal network use.
 
+http://velkoff.net/vsftpdweb/
+
 =========
 ---Linux Changes: 
 --Sudoers file changes: 
