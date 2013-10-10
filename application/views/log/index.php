@@ -1,5 +1,4 @@
 
-
 <h1>FTP LOG</h1>
 <table class="log">
 <tr><th>Info</th><th>Size</th><th>State</th><th>User</th><th>File Name</th></tr>
@@ -27,7 +26,12 @@
 	$si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
 	$base = 1024;
     $class = min((int)log((int)$size , $base) , count($si_prefix) - 1);
-    $msize = sprintf('%1.2f' , $size / pow($base,$class)) . ' ' . $si_prefix[$class];
+    if ($size > 0)
+    {
+        $msize = sprintf('%1.2f' , $size / pow($base,$class)) . ' ' . $si_prefix[$class];
+    } else {
+        $msize = 0;
+    }
 	//
 		
 	//name
