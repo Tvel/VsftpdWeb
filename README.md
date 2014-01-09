@@ -47,6 +47,7 @@ send mail for mails and users in "mail" table for yesterday atm.
 
 --------------------------------
 ----New Install Instructions----
+==========
 
 Install apache (or httpd)
 Install mysql-server
@@ -91,4 +92,5 @@ www-data ALL = NOPASSWD: /bin/rm /etc/vsftpd/vusers/[a-zA-Z0-9]*
 (or apache instead of www-data for httpd)
 
 edit the /etc/pam.d/vsftpd file with the sample vsftpd.pam file. change the username and password for the database.
------------------------------------------------------
+
+
