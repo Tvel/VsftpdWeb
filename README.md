@@ -50,37 +50,56 @@ send mail for mails and users in "mail" table for yesterday atm.
 ==========
 
 Install apache (or httpd)
+
 Install mysql-server
+
 Install php and php_mysql
+
 Install pam_mysql
+
 Install vsftpd
+
+
 
 set Short_tags=On in php.ini
 
+
 copy vsftpd web stuff to /var/www/ (or /var/www/html for httpd)
+
 
 edit the database config file "application/config/database.php" 
 
+
 Now web interface should work. Default password is admin.
+
 
 ----Here web stuff should appear ok ----
 
 I tend to make another user just for vsftp:  "adduser vsftpd", that is optional.
 
 in the new home dir for test setup make an FTP directory and xferlog.log file. make them fully acessable by all.
-ow there will be /home/vsftpd/FTP/ and /home/vsftpd/xferlog.log
+So there will be /home/vsftpd/FTP/ and /home/vsftpd/xferlog.log
+
 
 copy the sample vsftpd.conf and paste it in /etc/vsftpd/vsftpd.conf
 
+
 now make changes to the last of the lines in the file.
 
-guest_username=vsftpd          
-local_root=/home/vsftpd/FTP/$USER         
+
+guest_username=vsftpd 
+
+local_root=/home/vsftpd/FTP/$USER   
+
 user_config_dir=/etc/vsftpd/vusers
+
 xferlog_file=/home/vsftpd/xferlog.log
 
+
 guest_username is the user i made.
+
 local_root and xferlog_file are the log and the main ftp location
+
 
 
 mkdir /etc/vsftpd/vusers
