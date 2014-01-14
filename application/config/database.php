@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'vsftpduser';
-$db['default']['password'] = 'dolipassword2013';
+$db['default']['username'] = 'vsftpdweb';
+$db['default']['password'] = 'vsftpdadmin';
 $db['default']['database'] = 'vsftpd';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

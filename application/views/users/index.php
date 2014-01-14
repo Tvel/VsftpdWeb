@@ -4,11 +4,12 @@
 <table class="users" >
 <tr> <th>Username</th>  <th></th> <th></th> <th>Path</th> <th>Permissions</th></tr>
 <? 
+$base_url = base_url();
 foreach ($users as $user_item){
 
 
-$del = "/index.php/users/delete/".$user_item['id'];
-$pw = "/index.php/users/".$user_item['id'];
+$del = "".$base_url."index.php/users/delete/".$user_item['id'];
+$pw = "".$base_url."index.php/users/".$user_item['id'];
 
 
 

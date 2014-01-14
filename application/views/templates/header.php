@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>FTP Administration</title>
-		<link rel="stylesheet" href="/application/views/css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="<?php echo base_url();?>css/960.css" type="text/css" media="screen" charset="utf-8" />
 		
-		<link rel="stylesheet" href="/application/views/css/template.css" type="text/css" media="screen" charset="utf-8" />
-		<link rel="stylesheet" href="/application/views/css/colour.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="<?php echo base_url();?>css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="<?php echo base_url();?>css/colour.css" type="text/css" media="screen" charset="utf-8" />
 
 </head>
 <body>
@@ -14,7 +14,7 @@
 
 <h1 id="head">
 
-		<span class = "headspan">FTP Administration : <?=exec('hostname -f')?></span>
+		<span class = "headspan">FTP Administration : <?php echo base_url();?> <?=exec('hostname -f')?></span>
 		<span class = 'free'>
 	<ul class ="disk"><li>Main disk : <?=$disk1['space']?>	
 		<?php 
@@ -64,12 +64,12 @@
 	
 		
 		<ul id="navigation">
-			<li><a href="/index.php/monitor/">FTP Monitor</a></li>
-			<li><a href="/index.php/log/">FTP Log</a></li>
-			<li><a href="/index.php/users/">FTP User Settings</a></li>
+			<li><a href="<?php echo base_url();?>index.php/monitor/">FTP Monitor</a></li>
+			<li><a href="<?php echo base_url();?>index.php/log/">FTP Log</a></li>
+			<li><a href="<?php echo base_url();?>index.php/users/">FTP User Settings</a></li>
 			
-			<li><a href="/index.php/settings/">General Settings</a></li>				
-			<li><a href="/index.php/logout/">Log Out</a></li>
+			<li><a href="<?php echo base_url();?>index.php/settings/">General Settings</a></li>				
+			<li><a href="<?php echo base_url();?>index.php/logout/">Log Out</a></li>
 		</ul>	
 	
 	

@@ -3,7 +3,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
    <tr>
       <td height="200" colspan="2" align="center" valign="middle"><h3 align=center class="heading_bg"></h3>
-        <form action='/index.php/login/process' method="post" enctype="multipart/form-data">
+        <form action='<?php echo base_url();?>index.php/login/process' method="post" enctype="multipart/form-data">
 	      <table width="200" border="0" cellspacing="0" cellpadding="0" style="border:thin #CCCCCC 1px;" bgcolor="#CCCCCC">
   			<tr>
     			<td>

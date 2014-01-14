@@ -52,7 +52,7 @@ class Users extends CI_Controller {
 	{
 		$this->users_model->new_user();
 
-		header( "Location: /index.php/users/" );
+		header( "Location: ".$base_url."users/" );
 	}
 		
 	}
@@ -138,11 +138,9 @@ class Users extends CI_Controller {
 	
 	public function change()
 	{
-	
-	
-	
+
 	$this->users_model->change();
-	header( "Location: /index.php/users/" );
+	header( "Location: ".base_url()."index.php/users" );
 	
 	}
 	
@@ -151,7 +149,7 @@ class Users extends CI_Controller {
 	{
 
 	$this->users_model->changepass();
-	header( "Location: /index.php/users/" );
+	header( "Location: ".base_url()."index.php/users" );
 	
 	}
 

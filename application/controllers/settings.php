@@ -65,7 +65,7 @@ class Settings extends CI_Controller {
 		
 	$this->settings_model->change();
 
-	header( "Location: /index.php/settings/" );
+	header( "Location: ".base_url()."index.php/settings" );
 		
 	}
 	public function changepass()
@@ -89,7 +89,7 @@ class Settings extends CI_Controller {
 		}
 	else if ($this->form_validation->run() == true) {	
 		$this->settings_model->changepass();
-		header( "Location: /index.php/settings/" );
+		header( "Location: ".base_url()."index.php/settings" );
 		}
 	
 	}
