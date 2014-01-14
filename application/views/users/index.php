@@ -26,8 +26,8 @@ else if ($user_item['perm'] == 'wd') $perm = 'Write -DR';
 <td> <a href=<?=$del?> class="delete">Delete</a> </td>
 <td> <a href=<?=$pw?> class="edit">Settings</a> </td> 
 
-<td><?=$path?></td>
-<td><?=$perm?></td>
+<td><strong><?=str_replace('/', '<strong style="color:#FF7226">/</strong>', $path)?></strong></td>
+<td><strong><?=$perm?></strong></td>
 <?php
 }
  
