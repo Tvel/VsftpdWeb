@@ -82,4 +82,6 @@ If you have only one directory where you keep your FTP data, in the admin interf
 
 The mail functionality needs a cron job for http://localhost/index.php/email send mail for mails and users in "mail" table for yesterday atm.
 
+If you need to install in directory different than root edit the `$config['base_url']` line in `"\application\config\config.php"`
+
 ##Enjoy!
