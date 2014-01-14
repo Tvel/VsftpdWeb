@@ -3,7 +3,7 @@
 <div class="grid_16">
 <h1>Service monitor</h1>
 <table class="monitor">
-<?  foreach ($mon1 as $line) {
+<?php  foreach ($mon1 as $line) {
 
 
 if  (preg_match("/LISTENER/", $line)  ) {
@@ -92,7 +92,7 @@ echo "<tr><td></td><td id = log>M: $line </td></tr>";
 <h1>Users Connected</h1>
 
 <table class="monitor">
-<?  foreach ($mon2 as $line) {
+<?php  foreach ($mon2 as $line) {
 
 $line = substr($line,0,-16);
 $user = strstr($line, "vsftpd", true);

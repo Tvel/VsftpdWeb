@@ -3,7 +3,7 @@
 <h1>FTP LOG</h1>
 <table class="log">
 <tr><th>Info</th><th>Size</th><th>State</th><th>User</th><th>File Name</th></tr>
-<?
+<?php
 		// $myfile should be log file path
 		$myfile = $log_path;
 		exec("tac $myfile /var/www/ftp/temp.txt");

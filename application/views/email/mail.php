@@ -20,7 +20,7 @@ th, td {
 <h1><?=exec('hostname -f')?> FTP LOG</h1>
 <table class="log">
 <tr><th>Info</th><th>Size</th><th>State</th><th>User</th><th>File Name</th></tr>
-<?
+<?php
 
 		echo $load;
 

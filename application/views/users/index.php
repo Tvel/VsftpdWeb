@@ -3,7 +3,7 @@
 <h1>Users</h1>
 <table class="users" >
 <tr> <th>Username</th>  <th></th> <th></th> <th>Path</th> <th>Permissions</th></tr>
-<? 
+<?php 
 $base_url = base_url();
 foreach ($users as $user_item){
 
@@ -20,14 +20,15 @@ if ($user_item['perm'] == 'r' || $user_item['perm'] == '0') $perm = 'Read';
 else if ($user_item['perm'] == 'w') $perm = 'Write';
 else if ($user_item['perm'] == 'wd') $perm = 'Write -DR';
 
-?> <tr>
+?> 
+<tr>
 <td><strong> <?=$user_item['username']?> </strong></td> 
 <td> <a href=<?=$del?> class="delete">Delete</a> </td>
 <td> <a href=<?=$pw?> class="edit">Settings</a> </td> 
 
 <td><?=$path?></td>
 <td><?=$perm?></td>
-<?
+<?php
 }
  
 ?>
