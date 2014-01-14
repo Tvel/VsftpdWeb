@@ -14,7 +14,7 @@
 
 <h1 id="head">
 
-		<span class = "headspan">FTP Administration : <?php echo base_url();?> <?=exec('hostname -f')?></span>
+		<span class = "headspan">FTP Administration : <?php /*echo base_url(); */?> <?=exec('hostname -f')?></span>
 		<span class = 'free'>
 	<ul class ="disk"><li>Main disk : <?=$disk1['space']?>	
 		<?php 
