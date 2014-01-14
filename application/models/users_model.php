@@ -33,7 +33,7 @@ class Users_model extends CI_Model {
 {				
 				$username = $this->input->post('user');
 
-				$query = $this->db->get_where('settings', array('name' => 'user_path'));
+				$query = $this->db->get_where('settings', array('name' => 'disk1'));
 				$query = $query->row_array(0);
 				$ppath = $query['value'];
 				$ppath = $ppath.$username;
@@ -117,10 +117,10 @@ class Users_model extends CI_Model {
 			}
 			else if ($mkd == 0)
 			{
-				$q="SELECT value FROM settings WHERE name = 'user_path' ;";
+				$q="SELECT value FROM settings WHERE name = 'disk1' ;";
 				$ppath = $this->db->query($q)->row();
 				$ppath = $ppath->value.$username;
-				echo $ppath;
+				//echo $ppath;
 				if(!file_exists($ppath)){
 				if (!mkdir($ppath, 0777)) die("Failed to mkdir $ppath, did the dir existed? ");
 				if (!chmod($ppath, 0777)) die('Failed to chmod');
