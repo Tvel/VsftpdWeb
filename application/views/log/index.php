@@ -5,7 +5,9 @@
 <tr><th>Info</th><th>Size</th><th>State</th><th>User</th><th>File Name</th></tr>
 <?php
 		// $myfile should be log file path
-		$myfile = $log_path;
+	$myfile = $log_path;
+	if(file_exists($myfile)){
+
 		exec("tac $myfile /var/www/ftp/temp.txt");
 		$ic = 0;
 		$ic_max = 200;  // stops after this number of rows
@@ -26,8 +28,8 @@
 		
 	$si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
 	$base = 1024;
-    $class = min((int)log((int)$size , $base) , count($si_prefix) - 1);
-    $msize = sprintf('%1.2f' , $size / pow($base,$class)) . ' ' . $si_prefix[$class];
+	$class = min((int)log((int)$size , $base) , count($si_prefix) - 1);
+	$msize = sprintf('%1.2f' , $size / pow($base,$class)) . ' ' . $si_prefix[$class];
 	//
 		
 	//name
@@ -65,7 +67,7 @@
 		
 		}
 		pclose($handle);
-
+	} else { echo "<h2>---Log file path is incorrect!!---</h2>";}
 
 ?>
 </table>
