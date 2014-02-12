@@ -50,7 +50,7 @@ class Users_model extends CI_Model {
 	
 	*/	 
 		
-	$q="INSERT INTO accounts (username, password, perm) VALUES ( '".$this->input->post('user')."', MD5('".$this->input->post('upass')."'), 'r' )  ;";
+	$q="INSERT INTO accounts (username, password, perm) VALUES ( '".$this->input->post('user')."', PASSWORD('".$this->input->post('upass')."'), 'r' )  ;";
 	return $this->db->query($q);
 }
 
@@ -135,7 +135,7 @@ class Users_model extends CI_Model {
 	
 	$id = $this->input->post('id');
 	$pass = $this->input->post('upass');
-	$q="UPDATE accounts SET password = MD5('$pass') WHERE id = '$id';";
+	$q="UPDATE accounts SET password = PASSWORD('$pass') WHERE id = '$id';";
 	$this->db->query($q);
 	}
 
