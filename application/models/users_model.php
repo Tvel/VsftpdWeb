@@ -33,6 +33,7 @@ class Users_model extends CI_Model {
 {				
 				$username = $this->input->post('user');
 
+				if ( $this->input->post('dir') == 'def' ) {
 				$query = $this->db->get_where('settings', array('name' => 'disk1'));
 				$query = $query->row_array(0);
 				$ppath = $query['value'];
@@ -41,6 +42,22 @@ class Users_model extends CI_Model {
 					if (!mkdir($ppath, 0777)) die("Failed to mkdir $ppath, did the dir existed? ");
 					if (!chmod($ppath, 0777)) die('Failed to chmod');
 					}
+				}
+				if ( $this->input->post('dir') == 'custom' ) {
+                    $ppath = $this->input->post('path');
+
+
+                    $mkd = 1;
+
+                    $run = 'local_root='.$ppath;
+                    exec("echo $run > /etc/vsftpd/vusers/$username");
+                    exec("sudo chown root /etc/vsftpd/vusers/$username");
+
+                    if(!file_exists($ppath)){
+                        if (!mkdir($ppath, 0777)) die("Failed to mkdir $ppath, did the dir existed? If it did click <a href='index.php/users/'>here</a>.  ");
+                        if (!chmod($ppath, 0777)) die('Failed to chmod');
+                    }
+                }
 	/*
 	$data = array(
 		'username' => $this->input->post('user'),
@@ -49,13 +66,17 @@ class Users_model extends CI_Model {
 	);
 	
 	*/	 
-		
-	$q="INSERT INTO accounts (username, password, perm) VALUES ( '".$this->input->post('user')."', PASSWORD('".$this->input->post('upass')."'), 'r' )  ;";
+	if ( $this->input->post('dir') == 'def' ) { $ppath = 'none'; }
+	$q="INSERT INTO accounts (username, pass, perm, path) VALUES ( '".$this->input->post('user')."', PASSWORD('".$this->input->post('upass')."'), 'r', '".$ppath."' )  ;";
 	return $this->db->query($q);
 }
 
 	public function delete_user($id)
 {
+	$q="SELECT username FROM accounts WHERE id = $id ;";
+    $username = $this->db->query($q)->row();
+    $username = $username->username ;
+    exec("sudo rm /etc/vsftpd/vusers/$username");
 	return $this->db->delete('accounts', array('id' => $id)); 
 }
 

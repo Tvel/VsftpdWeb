@@ -2,14 +2,17 @@
 
 <h1>Users</h1>
 <table class="users" >
+
+    <thead>
 <tr> <th>Username</th>  <th></th> <th></th> <th>Path</th> <th>Permissions</th></tr>
-<?php 
-$base_url = base_url();
+    </thead>
+    <tbody>
+<?php
 foreach ($users as $user_item){
 
 
-$del = "".$base_url."index.php/users/delete/".$user_item['id'];
-$pw = "".$base_url."index.php/users/".$user_item['id'];
+$del = "/index.php/users/delete/".$user_item['id'];
+$pw = "/index.php/users/".$user_item['id'];
 
 
 
@@ -20,18 +23,20 @@ if ($user_item['perm'] == 'r' || $user_item['perm'] == '0') $perm = 'Read';
 else if ($user_item['perm'] == 'w') $perm = 'Write';
 else if ($user_item['perm'] == 'wd') $perm = 'Write -DR';
 
-?> 
+?>
+
 <tr>
 <td><strong> <?=$user_item['username']?> </strong></td> 
 <td> <a href=<?=$del?> class="delete">Delete</a> </td>
 <td> <a href=<?=$pw?> class="edit">Settings</a> </td> 
 
-<td><strong><?=str_replace('/', '<strong style="color:#FF7226">/</strong>', $path)?></strong></td>
-<td><strong><?=$perm?></strong></td>
-<?php
+<td><?=$path?></td>
+<td><?=$perm?></td>
+<?
 }
  
 ?>
+</tbody>
 </table>
 
 
@@ -59,5 +64,20 @@ else if ($user_item['perm'] == 'wd') $perm = 'Write -DR';
 			<tr>
 				<td colspan=2 align="center"><input type="submit" name="submit" value="Create User" /> </td>
 			</tr>
+
+            <tr>
+                <td >Select path:</td>
+                <td ><input type="radio" name="dir" value="def" checked /> Default user path <input type="radio" name="dir" value="custom"/> Custom path </td>
+            </tr>
+            <tr>
+                <td width=150>Custom Path:</td>
+                <td width=300><input type="text" name="path" size=30 value=""></td>
+            </tr>
+
+            <tr>
+                <td colspan=2 align="center"><input type="submit" name="submit" value="Create User" /> </td>
+            </tr>
 		</table>
 	</form>
+
+
