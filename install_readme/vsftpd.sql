@@ -27,14 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `accounts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `path` varchar(255) NOT NULL DEFAULT 'none',
-  `perm` varchar(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+`id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `pass` varchar(50) NOT NULL,
+  `perm` varchar(50) NOT NULL DEFAULT '0',
+  `path` varchar(50) NOT NULL DEFAULT 'none'
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
 -- --------------------------------------------------------
