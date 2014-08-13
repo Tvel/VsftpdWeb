@@ -67,7 +67,7 @@ class Users_model extends CI_Model {
 	
 	*/	 
 	if ( $this->input->post('dir') == 'def' ) { $ppath = 'none'; }
-	$q="INSERT INTO accounts (username, pass, perm, path) VALUES ( '".$this->input->post('user')."', PASSWORD('".$this->input->post('upass')."'), 'r', '".$ppath."' )  ;";
+	$q="INSERT INTO accounts (username, pass, perm, path) VALUES ( '".$this->input->post('user')."', MD5('".$this->input->post('upass')."'), 'r', '".$ppath."' )  ;";
 	return $this->db->query($q);
 }
 
@@ -156,7 +156,7 @@ class Users_model extends CI_Model {
 	
 	$id = $this->input->post('id');
 	$pass = $this->input->post('upass');
-	$q="UPDATE accounts SET password = PASSWORD('$pass') WHERE id = '$id';";
+	$q="UPDATE accounts SET password = MD5('$pass') WHERE id = '$id';";
 	$this->db->query($q);
 	}
 
