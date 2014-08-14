@@ -29,8 +29,13 @@
 			
 			$si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
 			$base = 1024;
+			if ($size == 0) {
+			$msize = '0 '.$si_prefix[0];
+			}
+			else {
 			$class = min((int)log((int)$size , $base) , count($si_prefix) - 1);
 			$msize = sprintf('%1.2f' , $size / pow($base,$class)) . ' ' . $si_prefix[$class];
+			}
 			//
 			
 			//name
