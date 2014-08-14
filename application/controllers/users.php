@@ -84,6 +84,7 @@ class Users extends CI_Controller {
 		
 		
 		$data['checkpath'] = "";
+		$data['checked'] = 0;
 		if ($data['user_item']['path'] == 'none') $data['checked'] = 1;
 		else{
 			$find = strpos($data['user_item']['path'], $data['getdisk1']);
