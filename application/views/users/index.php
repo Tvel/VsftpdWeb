@@ -10,9 +10,9 @@
 <?php
 foreach ($users as $user_item){
 
+$del = "".$base_url."index.php/users/delete/".$user_item['id'];
+$pw = "".$base_url."index.php/users/".$user_item['id'];
 
-$del = "/index.php/users/delete/".$user_item['id'];
-$pw = "/index.php/users/".$user_item['id'];
 
 
 
