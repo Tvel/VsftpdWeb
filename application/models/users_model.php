@@ -156,7 +156,7 @@ class Users_model extends CI_Model {
 	
 	$id = $this->input->post('id');
 	$pass = $this->input->post('upass');
-	$q="UPDATE accounts SET password = MD5('$pass') WHERE id = '$id';";
+	$q="UPDATE accounts SET pass = MD5('$pass') WHERE id = '$id';";
 	$this->db->query($q);
 	}
 
