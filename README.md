@@ -7,7 +7,10 @@ It is inteneded for internal network use.
 
 http://velkoff.net/vsftpdweb/
 
- 
+WARNING
+==========
+Software is currently not compatible with php7
+
 Install Instructions
 ==========
 
