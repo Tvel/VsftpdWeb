@@ -9,7 +9,7 @@ http://velkoff.net/vsftpdweb/
 
 WARNING
 ==========
-Software is currently not compatible with php7
+Software is currently not compatible with php7 and does not follow modern php coding practices. It works as intended for the system that it was build for so you are free to use it if that is not a problem.
 
 Install Instructions
 ==========
